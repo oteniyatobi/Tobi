@@ -136,37 +136,29 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 20px;
+    padding: 1.2rem 4%;
     position: fixed;
-    width: 100%;
+    width: 100vw;
+    /* Ensure it covers whole viewport */
+    left: 0;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(20px);
-    background: rgba(2, 6, 23, 0.7);
+    background: rgba(2, 6, 23, 0.8);
     border-bottom: 1px solid var(--glass-border);
 }
 
-nav ul {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    list-style: none;
-    gap: 3rem;
-}
-
-.logo,
-.btn-nav {
-    position: relative;
-    z-index: 1001;
-    white-space: nowrap;
-}
-
 .logo {
+    flex: 1;
+    /* Take up space on the left */
+    display: flex;
+    justify-content: flex-start;
     font-size: 1.8rem;
     color: var(--text-primary);
     text-decoration: none;
     letter-spacing: -1px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
 }
 
 .logo span {
@@ -174,9 +166,33 @@ nav ul {
 }
 
 nav ul {
+    flex: 2;
+    /* Take up more space in the middle */
     display: flex;
+    justify-content: center;
     list-style: none;
     gap: 3rem;
+}
+
+.btn-nav-wrapper {
+    flex: 1;
+    /* Take up equal space on the right to balance the logo */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-nav {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--accent);
+    transition: var(--transition);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
 }
 
 nav ul li a {
@@ -205,23 +221,6 @@ nav ul li a:hover {
 
 nav ul li a:hover::after {
     width: 100%;
-}
-
-.btn-nav {
-    background: rgba(56, 189, 248, 0.1);
-    color: var(--accent);
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    border: 1px solid var(--accent);
-    transition: var(--transition);
-}
-
-.btn-nav:hover {
-    background: var(--accent);
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* --- Hero Section --- */
