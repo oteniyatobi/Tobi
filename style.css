@@ -442,6 +442,7 @@ section {
     background: linear-gradient(45deg, transparent, rgba(56, 189, 248, 0.05));
     opacity: 0;
     transition: var(--transition);
+    pointer-events: none;
 }
 
 .card:hover {
@@ -513,6 +514,70 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.project-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.project-actions .link {
+    margin-top: 0;
+}
+
+.details-toggle {
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0;
+}
+
+.details-toggle i {
+    font-size: 0.75rem;
+    margin: 0;
+    transition: var(--transition);
+}
+
+.details-toggle[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.project-details {
+    border-top: 1px solid var(--glass-border);
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+}
+
+.project-details p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-details strong {
+    color: var(--text-primary);
+}
+
+.repo-link {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.repo-link i {
+    display: inline;
+    font-size: 0.8rem;
+    margin: 0 0 0 0.3rem;
 }
 
 .project-card .link i {
@@ -683,6 +748,17 @@ footer {
     filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.6));
 }
 
+/* Jobs. — warm signal for the API case study */
+.jobs-hero {
+    background: linear-gradient(135deg, #24140b 0%, #61301b 55%, #9a4f25 100%);
+    color: rgba(255, 221, 177, 0.8);
+}
+
+.jobs-hero i {
+    color: #ffd19a;
+    filter: drop-shadow(0 0 12px rgba(255, 172, 92, 0.6));
+}
+
 /* --- Responsiveness --- */
 @media (max-width: 992px) {
     .about-grid {
@@ -714,5 +790,10 @@ footer {
 
     .section-header h2 {
         font-size: 2.5rem;
+    }
+
+    .project-actions {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }

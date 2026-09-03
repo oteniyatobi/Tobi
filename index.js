@@ -38,3 +38,15 @@ btns.forEach(btn => {
         btn.style.transform = `translate(0, 0)`;
     });
 });
+
+// Expandable project detail panels
+const detailToggles = document.querySelectorAll('.details-toggle');
+detailToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const details = document.getElementById(toggle.getAttribute('aria-controls'));
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+        details.hidden = isExpanded;
+    });
+});
